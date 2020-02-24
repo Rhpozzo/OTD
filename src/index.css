@@ -18,3 +18,23 @@ code {
     margin: auto;
     color: white;
 }
+
+
+.alert{
+    color: black;
+    display: inline-block;
+    margin: auto;
+}
+.time{
+    font-size: 5em;
+}
+.count{
+    font-size: 13em;
+    display: flex;
+    margin: auto;
+}
+.p{
+    font-size: 5em;
+    display: flex;
+    margin: auto;
+}

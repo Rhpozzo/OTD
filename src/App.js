@@ -1,21 +1,65 @@
-import React from 'react';
-import Moment from 'react-moment';
-import 'moment-timezone';
-import moment from 'moment-timezone';
+import React, { useState, useEffect, useRef } from "react";
+import ReactDOM from "react-dom";
 
-const App = () => {
-    let time = new Date
-    let hours = time.getHours();
-    let minutes = setInteval(() => {
-        time.getMinutes()
-    },1000);
-    let seconds = time.getSeconds();
-    return(
-    <div className='row'>
-        <h1 className='dateBox'>Station Time: {minutes}</h1>
+function Counter() {
+  const [count, setCount] = useState(0);
+  let t = new Date();
+  let time = t.getTime();
+  let hour = t.getHours();
+  let minutes = Math.floor((time / 1000 / 60) % 60);
+  minutes = ("0" + minutes).slice(-2);
+  let second = Math.floor((time / 1000) % 60);
+  let seconds = second;
+  seconds = ("0" + seconds).slice(-2);
+  let timeLeft = 0;
+  let newSeconds = minutes * 60;
+  let sum = newSeconds + second;
+
+  useInterval(() => {
+    if (minutes < 30) {
+      timeLeft = Math.floor((((1800 - sum) * 1000) / 1000 / 60) % 60);
+    }
+    if (minutes >= 30) {
+      timeLeft = Math.floor(((3600 - sum) * 1000) / 1000 / 60) % 60;
+    }
+    setCount(timeLeft);
+  }, 1000);
+
+  return (
+    <div className='container-fluid'>
+      <h1 className='alert alert-success'>
+        <span className='time'>{hour}:{minutes}:{seconds}</span>
+      </h1>
+      <div className='count'>
+            <h1 className="count">{count}</h1>
+      </div>
+      <div className='p'>
+         <p className='p'>Minutes remaining</p>   
+      </div>  
     </div>
-
-  )
+  );
 }
 
-export default App;
+function useInterval(callback, delay) {
+  const savedCallback = useRef();
+
+  // Remember the latest function.
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  // Set up the interval.
+  useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
+}
+
+// const rootElement = document.getElementById("root");
+// ReactDOM.render(<Counter />, rootElement);
+export default Counter
