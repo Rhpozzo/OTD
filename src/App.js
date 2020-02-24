@@ -30,9 +30,9 @@ function Counter() {
       <h1 className='alert alert-success'>
         <span className='time'>{hour}:{minutes}:{seconds}</span>
       </h1>
-      <div className='count'>
-            <h1 className="count">{count}</h1>
-      </div>
+      <h1 className='count'>
+            <span className="min">{count}</span>
+      </h1>
       <div className='p'>
          <p className='p'>Minutes remaining</p>   
       </div>  

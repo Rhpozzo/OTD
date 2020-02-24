@@ -29,12 +29,17 @@ code {
     font-size: 5em;
 }
 .count{
-    font-size: 13em;
+    font-size: 8em;
+    display: flex;
+    margin: auto;
+}
+.min{
+    font-size: 9em;
     display: flex;
     margin: auto;
 }
 .p{
-    font-size: 5em;
+    font-size: 4em;
     display: flex;
     margin: auto;
 }
