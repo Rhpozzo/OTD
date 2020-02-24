@@ -27,14 +27,18 @@ function Counter() {
 
   return (
     <div className='container-fluid'>
-      <h1 className='alert alert-success'>
-        <span className='time'>{hour}:{minutes}:{seconds}</span>
+    <div>
+      <h1 className='row alert alert-success'>
+        <span className='col-12s time'>{hour}:{minutes}:{seconds}</span>
       </h1>
-      <h1 className='count'>
-            <span className="min">{count}</span>
+    </div>
+    <div>
+      <h1 className='row count'>
+            <span className="col-12s min">{count}</span>
       </h1>
-      <div className='p'>
-         <p className='p'>Minutes remaining</p>   
+    </div>
+      <div className='row p'>
+         <p className='col-12s p'>Minutes remaining</p>   
       </div>  
     </div>
   );

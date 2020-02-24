@@ -26,7 +26,7 @@ code {
     margin: auto;
 }
 .time{
-    font-size: 1em;
+    font-size: 1.5em;
 }
 .count{
     font-size: 4em;
@@ -34,7 +34,7 @@ code {
     margin: auto;
 }
 .min{
-    font-size: 8em;
+    font-size: 10em;
     display: flex;
     margin: auto;
 }
