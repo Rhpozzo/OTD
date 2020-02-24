@@ -26,20 +26,20 @@ code {
     margin: auto;
 }
 .time{
-    font-size: 5em;
+    font-size: 1em;
 }
 .count{
-    font-size: 8em;
+    font-size: 4em;
     display: flex;
     margin: auto;
 }
 .min{
-    font-size: 9em;
+    font-size: 8em;
     display: flex;
     margin: auto;
 }
 .p{
-    font-size: 4em;
+    font-size: 2em;
     display: flex;
     margin: auto;
 }
